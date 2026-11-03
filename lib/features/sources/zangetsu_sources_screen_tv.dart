@@ -1,4 +1,4 @@
-// Zangetsu sources — TV (D-pad) UI.
+// Glad sources — TV (D-pad) UI.
 part of 'zangetsu_sources_screen.dart';
 
 // ---------------------------------------------------------------------------

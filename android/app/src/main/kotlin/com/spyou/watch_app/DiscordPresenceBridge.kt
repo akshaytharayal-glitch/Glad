@@ -3,7 +3,6 @@ package com.spyou.watch_app
 import android.app.Activity
 import android.os.Handler
 import android.os.Looper
-import com.discord.socialsdk.DiscordSocialSdkInit
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodChannel
 
@@ -34,7 +33,7 @@ class DiscordPresenceBridge(private val activity: Activity, messenger: BinaryMes
                         require(token.isNotBlank() && appId > 0)
                         System.loadLibrary("discord_partner_sdk")
                         System.loadLibrary("zangetsu_discord")
-                        DiscordSocialSdkInit.setEngineActivity(activity)
+                        attachEngineActivity()
                         nativeStart(appId, token)
                         if (!running) {
                             running = true
@@ -52,7 +51,7 @@ class DiscordPresenceBridge(private val activity: Activity, messenger: BinaryMes
                         val urls = (metadata?.get("button_urls") as? List<*>)?.filterIsInstance<String>() ?: emptyList()
                         require(labels.size == urls.size && labels.size <= 2)
                         nativeUpdate(
-                            a["name"] as? String ?: "Zangetsu", (a["type"] as? Number)?.toInt() ?: 0,
+                            a["name"] as? String ?: "Glad", (a["type"] as? Number)?.toInt() ?: 0,
                             a["details"] as? String, a["state"] as? String,
                             assets?.get("large_image") as? String, assets?.get("large_text") as? String,
                             assets?.get("small_image") as? String, assets?.get("small_text") as? String,
@@ -72,6 +71,20 @@ class DiscordPresenceBridge(private val activity: Activity, messenger: BinaryMes
                 result.error("DISCORD_SDK_UNAVAILABLE", "Discord native library could not load", null)
             }
         }
+    }
+
+    /**
+     * Hands the Activity to Discord's SDK. Done by reflection so the app compiles
+     * without Discord's proprietary AAR (which is not redistributable and is not
+     * in the repository): without it, `System.loadLibrary` above throws first and
+     * Rich Presence reports itself as unavailable.
+     */
+    private fun attachEngineActivity() {
+        val cls = Class.forName("com.discord.socialsdk.DiscordSocialSdkInit")
+        val method = cls.getMethod("setEngineActivity", Activity::class.java)
+        val target = if (java.lang.reflect.Modifier.isStatic(method.modifiers)) null
+        else cls.getField("INSTANCE").get(null)
+        method.invoke(target, activity)
     }
 
     private fun stop() {

@@ -89,7 +89,7 @@ class AppLogger {
     try {
       final dir = await getTemporaryDirectory();
       final f = File('${dir.path}/zangetsu-logs.txt');
-      await f.writeAsString('Zangetsu logs\n\n$contents\n');
+      await f.writeAsString('Glad logs\n\n$contents\n');
       return f;
     } catch (_) {
       return null;

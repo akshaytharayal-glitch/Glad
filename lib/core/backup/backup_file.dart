@@ -73,7 +73,7 @@ class BackupFile {
       final shared = await FileDownloader().moveFileToSharedStorage(
         file.path,
         SharedStorage.downloads,
-        directory: 'Zangetsu',
+        directory: 'Glad',
       );
       if (shared != null && shared.isNotEmpty) return shared;
     } catch (_) {/* shared storage unavailable (common on TV) */}
@@ -129,7 +129,7 @@ class BackupFile {
     // which makes the backup impossible to select — the #1 "restore doesn't
     // work" cause. The content is validated by parseBackupJson/unwrapPayload
     // right after reading, so allowing any file is safe (bad picks get a clear
-    // "isn't a Zangetsu backup" error).
+    // "isn't a Glad backup" error).
     final picked = await FilePicker.pickFile();
     if (picked == null) return null;
 

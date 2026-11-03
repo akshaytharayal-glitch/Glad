@@ -44,6 +44,7 @@ import '../../core/provider/cs_dns.dart';
 import '../../core/provider/provider_manager.dart';
 import '../downloads/downloads_screen.dart';
 import '../history/history_screen.dart';
+import '../memories/memories_screen.dart';
 import 'app_face_screen.dart';
 import 'appearance_screen.dart';
 import 'poster_card_settings_screen.dart';
@@ -387,7 +388,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       return;
     }
     await SharePlus.instance.share(
-      ShareParams(files: [XFile(file.path)], subject: 'Zangetsu logs'),
+      ShareParams(files: [XFile(file.path)], subject: 'Glad logs'),
     );
   }
 
@@ -1058,6 +1059,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             'reader manga novel reading defaults fit direction fontsize theme orientation preload',
         onTap: () => _push(const ReaderSettingsScreen()),
       ),
+    _SettingsEntry(
+      section: SettingsSection.history,
+      icon: Icons.auto_awesome_rounded,
+      title: 'Memories',
+      subtitle: 'Hours watched, movies, series, reading and calendar',
+      keywords: 'memories stats statistics hours calendar watched streak',
+      onTap: () async {
+        await _push(const MemoriesScreen());
+        if (mounted) setState(() {});
+      },
+    ),
     _SettingsEntry(
       section: SettingsSection.history,
       icon: Icons.history_rounded,

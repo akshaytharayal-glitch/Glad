@@ -667,7 +667,7 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.descendant(of: sheet, matching: find.text('Zangetsu')),
+      find.descendant(of: sheet, matching: find.text('Glad')),
       findsOneWidget,
     );
     expect(

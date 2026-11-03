@@ -51,6 +51,7 @@ import '../reading/read_store.dart';
 import '../reading/reader_overrides.dart';
 import '../reading/reader_prefs.dart';
 import '../playback/title_prefs.dart';
+import '../memories/memories_log.dart';
 import '../playback/watch_history.dart';
 import '../provider/cf_clearance_store.dart';
 import '../provider/cloudstream_provider.dart';
@@ -368,6 +369,8 @@ Future<void> initDependencies() async {
   sl.registerSingleton<ReadStore>(
     ReadStore(currentProfileId: currentProfileId),
   );
+  await MemoriesLog.init();
+  MemoriesLog.profileResolver = currentProfileId;
   await WatchHistory.init();
   sl.registerSingleton<WatchHistory>(
     WatchHistory(
@@ -864,7 +867,7 @@ Future<void> initDependencies() async {
   }
 
   // The app ships with NO built-in providers — every source comes from a repo
-  // (the Zangetsu repo is installed on first launch via onboarding). Drop any
+  // (the Glad repo is installed on first launch via onboarding). Drop any
   // legacy `bundled://` entries left by older installs, then load the
   // repo-installed providers persisted from previous launches.
   await registry.purgeBundled();

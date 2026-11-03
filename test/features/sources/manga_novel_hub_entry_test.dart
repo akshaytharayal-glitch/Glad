@@ -160,7 +160,7 @@ void main() {
     ) async {
       await pump(tester);
 
-      expect(find.text('Zangetsu'), findsOneWidget);
+      expect(find.text('Glad'), findsOneWidget);
       expect(find.text('Built-in JS providers'), findsOneWidget);
       expect(find.text('3 sources'), findsOneWidget); // all 3, unfiltered
     });
@@ -192,7 +192,7 @@ void main() {
         // reduces to here.
         expect(find.text('ACTIVE'), findsOneWidget);
         final activeY = tester.getTopLeft(find.text('ACTIVE')).dy;
-        final zangetsuY = tester.getTopLeft(find.text('Zangetsu')).dy;
+        final zangetsuY = tester.getTopLeft(find.text('Glad')).dy;
         expect((activeY - zangetsuY).abs(), lessThan(30));
       },
     );
@@ -253,7 +253,7 @@ void main() {
       (tester) async {
         await pump(tester);
 
-        await tester.tap(find.text('Zangetsu'));
+        await tester.tap(find.text('Glad'));
         await tester.pumpAndSettle();
 
         expect(find.text('Anime One'), findsOneWidget);

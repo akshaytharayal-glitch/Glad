@@ -3924,7 +3924,7 @@ class PlayerCubit extends Cubit<PlayerState> {
         position: _lastPos,
         duration: _lastDur,
         playing: !_discordPaused,
-        // Friend tapping "Open in Zangetsu" lands on this exact title (or the
+        // Friend tapping "Open in Glad" lands on this exact title (or the
         // install page without the app). Same anime/movie call as episode
         // enrichment so the link's type hint matches.
         openUrl: ShareLink.watchUrl(

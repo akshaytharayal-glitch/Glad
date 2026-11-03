@@ -4,6 +4,7 @@ import 'package:watch_app/core/hive/hive_key.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show PostgrestClient;
 
+import '../memories/memories_log.dart';
 import '../models/provider_info.dart';
 import '../privacy/incognito_mode.dart';
 import '../profiles/profile_scope.dart';
@@ -429,6 +430,8 @@ class ReadHistory {
     final profileId = _profileId;
     final key = _key(e.sourceId, e.showId, profileId);
     await _box.put(key, e.toJson());
+    // Feed the on-device Memories stats (chapters read per day / title).
+    MemoriesLog.recordRead(profileId, e);
     if (flush) {
       await _pushToCloud(key, e, profileId, force: true);
     } else {

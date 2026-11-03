@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:supabase_flutter/supabase_flutter.dart'
     show PostgrestClient, PostgrestQueryBuilder;
 
+import '../memories/memories_log.dart';
 import '../privacy/incognito_mode.dart';
 import '../profiles/profile_scope.dart';
 import '../supabase/cloud_postgrest.dart';
@@ -332,6 +333,8 @@ class WatchHistory {
       'updatedAt': e.updatedAt,
       'malId': e.malId,
     });
+    // Feed the on-device Memories stats (watch time per day, titles finished).
+    MemoriesLog.recordWatch(profileId, e);
     if (flush) {
       await _pushToCloud(key, e, profileId, force: true);
     } else {

@@ -102,6 +102,8 @@ import 'genres_screen.dart';
 import 'search_screen.dart';
 import 'cubit/tracker_home_rows.dart' show releasedCount;
 import 'see_all_screen.dart';
+import '../../core/ui/glad_cards.dart';
+import '../memories/memories_screen.dart';
 
 /// Provides the [HomeCubit] (which owns the three browse rows + the carousel's
 /// trending source) and kicks off the first load. The view itself stays
@@ -156,7 +158,7 @@ class _HomeViewState extends State<_HomeView>
   final ValueNotifier<Color?> _heroTint = ValueNotifier(null);
 
   // ── Logo-strike mode transition ──────────────────────────────────────────
-  // Tapping a mode card runs a full-screen overlay: the Zangetsu mark springs
+  // Tapping a mode card runs a full-screen overlay: the Glad mark springs
   // in at centre behind a scrim, a red glow pulses and a steel glint sweeps the
   // blade, the mode swaps hidden at that peak, then it reveals. Self-contained —
   // see [_enterMode] / [_slashOverlay].
@@ -462,6 +464,45 @@ class _HomeViewState extends State<_HomeView>
     // in memory and on disk — so each logo is ready before its banner rotates
     // in (no pop-in), and it barely touches TMDB on later launches.
     sl<TitleLogoService>().prefetch(items);
+  }
+
+  /// Glad Spotlight: a coverflow plus a swipe-to-save stack, built from the
+  /// rows Home has already loaded (no extra network).
+  Widget _gladSpotlight(List<HomeRow>? rows) {
+    if (rows == null) return const SizedBox.shrink();
+    final seen = <String>{};
+    final pool = <MediaItem>[];
+    for (final row in rows) {
+      if (row is! ProviderHomeRow) continue;
+      for (final m in row.section.items) {
+        final cover = m.cover;
+        if (cover == null || cover.isEmpty) continue;
+        if (seen.add('${m.sourceId}|${m.id}')) pool.add(m);
+      }
+    }
+    final featured = pool.take(10).toList();
+    final discover = pool.skip(10).take(12).toList();
+    return GladSpotlight(
+      featured: featured,
+      discover: discover,
+      onOpen: _openDetail,
+      onMemories: () => Navigator.push(
+        context,
+        MaterialPageRoute<void>(builder: (_) => const MemoriesScreen()),
+      ),
+      onSave: (m) {
+        unawaited(_myList.add(m));
+        if (!mounted) return;
+        ScaffoldMessenger.maybeOf(context)
+          ?..hideCurrentSnackBar()
+          ..showSnackBar(
+            SnackBar(
+              content: Text('Saved "${m.title}" to My List'),
+              duration: const Duration(seconds: 2),
+            ),
+          );
+      },
+    );
   }
 
   void _openDetail(MediaItem item) {
@@ -800,7 +841,7 @@ class _HomeViewState extends State<_HomeView>
           final splitEdgeHeader = edgeBanner && constraints.maxWidth < 520;
           final brand = edgeBanner
               ? IconButton(
-                  tooltip: 'Zangetsu',
+                  tooltip: 'Glad',
                   onPressed: () => _openHomeCataloguePicker(),
                   icon: Image.asset(
                     'assets/icon/logo_mark.png',
@@ -2060,6 +2101,10 @@ class _HomeViewState extends State<_HomeView>
                       // ── Reconnect banner (session lapsed → sync is off) ───────
                       if (needsReconnect)
                         SliverToBoxAdapter(child: _reconnectBanner()),
+
+                      // ── Glad Spotlight (coverflow + swipe stack) ──────────────
+                      if (!_sourceCatalogueSelected && !noSourceForMode)
+                        SliverToBoxAdapter(child: _gladSpotlight(state.rows)),
 
                       // ── The arrangement ─────────────────────────────────────
                       // state.rows is the merged view of this load: the local

@@ -1,9 +1,20 @@
+Glad
+A rebranded and extended fork of Zangetsu.
+
 Zangetsu
 Copyright (C) 2026 Krishna Vishwakarma (https://github.com/Spyou)
+Original project: https://github.com/Spyou/Zangetsu
+
+Glad is derived from Zangetsu and is distributed under the same license, the
+GNU General Public License version 3.0 (GPL-3.0). See the LICENSE file for the
+full text. The original copyright notices are kept. Changes made for Glad
+(rebrand, new home layout and card styles, the Memories stats screen, the
+GitHub Actions APK/Release workflow, and making Discord Rich Presence optional)
+are described in the git history of this repository.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License version 3.0 (GPL-3.0) as published
-by the Free Software Foundation. See the LICENSE file for the full text.
+by the Free Software Foundation.
 
 The vast majority of this project is original work. The notices below cover the
 third-party code it incorporates, and the licenses that apply to those parts.

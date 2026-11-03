@@ -254,7 +254,7 @@ class _EpubExportBodyState extends State<_EpubExportBody> {
       return;
     }
 
-    final show = 'Zangetsu/${ChapterDownloadStore.safeName(widget.showTitle)}';
+    final show = 'Glad/${ChapterDownloadStore.safeName(widget.showTitle)}';
     final saved = await _publish(written, show);
     if (!mounted) return;
     setState(() => _exporting = false);

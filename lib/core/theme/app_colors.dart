@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   /// The default near-black background.
-  static const Color defaultBg = Color(0xFF0B0B0F);
+  static const Color defaultBg = Color(0xFF0A0A14);
 
-  static const Color defaultSurface = Color(0xFF16161C);
-  static const Color defaultSurface2 = Color(0xFF20212A);
+  static const Color defaultSurface = Color(0xFF15152A);
+  static const Color defaultSurface2 = Color(0xFF1F1F3A);
 
   /// Background + card surfaces. Runtime-mutable for the AMOLED (pure-black)
   /// toggle: set by [ThemeController] at startup. Default to the original
@@ -25,7 +25,7 @@ abstract class AppColors {
   static const hairline = Color(0x14FFFFFF);
 
   /// The original coral-red signature — the default accent.
-  static const Color defaultAccent = Color(0xFFFF4D57);
+  static const Color defaultAccent = Color(0xFF8B5CF6);
 
   /// The app-wide accent. Runtime-mutable so it can be themed: set once at
   /// startup by [ThemeController] and updated when the user picks a new colour.

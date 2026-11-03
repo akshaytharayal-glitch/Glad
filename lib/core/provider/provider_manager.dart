@@ -1046,7 +1046,7 @@ class JsProvider implements BaseProvider, ReadingProvider {
     ], timeout: const Duration(seconds: 30), abandoned: abandoned);
     final map = jsonDecode(raw) as Map<String, dynamic>;
     // Sozo Read manga/novel detail payloads carry the chapter list under
-    // `chapters`; Zangetsu's MediaDetail reads `episodes` (Task E4 compat
+    // `chapters`; Glad's MediaDetail reads `episodes` (Task E4 compat
     // alias). Only fills in when `episodes` is absent, so a Zangetsu-shaped
     // payload's own `episodes` key always wins.
     if (!map.containsKey('episodes') && map.containsKey('chapters')) {

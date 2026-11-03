@@ -30,7 +30,7 @@ String folderLabelFromUri(Uri treeUri) {
 }
 
 /// Lets the user pick a custom SAF directory for MP4 downloads, or reset
-/// back to the default Downloads › Zangetsu location.
+/// back to the default Downloads › Glad location.
 class DownloadLocationScreen extends StatefulWidget {
   const DownloadLocationScreen({super.key});
 

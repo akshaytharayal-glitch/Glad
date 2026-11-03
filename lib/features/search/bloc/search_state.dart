@@ -166,11 +166,11 @@ class SourceResultGroup extends Equatable {
 const String kAllSources = '__all__';
 
 /// The provider ecosystem a source belongs to. Drives the phone Search
-/// ecosystem tab strip (All · Zangetsu · CloudStream · Aniyomi). [all] is the
+/// ecosystem tab strip (All · Glad · CloudStream · Aniyomi). [all] is the
 /// default "no filter" tab, not a real ecosystem.
 enum SearchEcosystem {
   all('All'),
-  zangetsu('Zangetsu'),
+  zangetsu('Glad'),
   cloudstream('CloudStream'),
   aniyomi('Aniyomi'),
   mihon('Mihon'),
@@ -182,14 +182,14 @@ enum SearchEcosystem {
 }
 
 /// Maps a [sourceId] to its ecosystem from the id prefix: `ani:` → Aniyomi,
-/// `cs:` → CloudStream, anything else → Zangetsu (the app's own JS providers).
+/// `cs:` → CloudStream, anything else → Glad (the app's own JS providers).
 /// Never returns [SearchEcosystem.all] — that's the "no filter" tab.
 SearchEcosystem ecosystemOf(String sourceId) {
   if (sourceId.startsWith('ani:')) return SearchEcosystem.aniyomi;
   if (sourceId.startsWith('cs:')) return SearchEcosystem.cloudstream;
   // Manga and novel extensions carry their own prefixes and belong to their own
-  // ecosystems. Without these they fell through to Zangetsu, so a MangaDex
-  // result sat under a tab labelled "Zangetsu" and no Mihon tab ever appeared.
+  // ecosystems. Without these they fell through to Glad, so a MangaDex
+  // result sat under a tab labelled "Glad" and no Mihon tab ever appeared.
   // A future ecosystem (Mangayomi, say) is one prefix and one enum value.
   if (sourceId.startsWith('mihon:')) return SearchEcosystem.mihon;
   if (sourceId.startsWith('lnr:')) return SearchEcosystem.lnreader;
@@ -200,7 +200,7 @@ SearchEcosystem ecosystemOf(String sourceId) {
 }
 
 /// The ecosystem tabs to offer for the given installed [sourceIds]. Always
-/// leads with [SearchEcosystem.all]; each real ecosystem (Zangetsu, then
+/// leads with [SearchEcosystem.all]; each real ecosystem (Glad, then
 /// CloudStream, then Aniyomi) is included only when at least one installed
 /// source belongs to it — so e.g. the Aniyomi tab never appears until an
 /// Aniyomi source is installed.

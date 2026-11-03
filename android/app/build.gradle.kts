@@ -46,7 +46,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.spyou.watch_app"
+        applicationId = "com.glad.app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -54,10 +54,16 @@ android {
     }
 
     buildFeatures { prefab = true }
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
+    // Discord Rich Presence needs Discord's proprietary SDK (not in the repo).
+    // Without the AAR the native bridge is skipped and the app builds and runs
+    // with Rich Presence reported as unavailable. Install the SDK with
+    // tool/setup_discord_sdk.py to turn it on.
+    if (rootProject.file("discord-sdk/discord_partner_sdk.aar").exists()) {
+        externalNativeBuild {
+            cmake {
+                path = file("src/main/cpp/CMakeLists.txt")
+                version = "3.22.1"
+            }
         }
     }
 
@@ -193,10 +199,9 @@ configurations.configureEach {
 // it. GPL-3.0 — see docs/cloudstream-integration-spec.md §7.
 dependencies {
     val discordSdk = rootProject.file("discord-sdk/discord_partner_sdk.aar")
-    require(discordSdk.exists()) {
-        "Discord SDK missing: run python3 tool/setup_discord_sdk.py /path/to/DiscordSocialSdk-1.10.19337.zip"
+    if (discordSdk.exists()) {
+        implementation(files(discordSdk))
     }
-    implementation(files(discordSdk))
     implementation("com.github.recloudstream.cloudstream:library:v4.8.0")
     // Jackson is already on the RUNTIME classpath (CloudStream library transitive
     // dep). compileOnly lets our clean-room DataStore reference JsonMapper for the

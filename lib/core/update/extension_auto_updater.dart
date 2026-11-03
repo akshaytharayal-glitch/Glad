@@ -11,7 +11,7 @@ import '../provider/provider_registry.dart';
 import '../provider/provider_repo_registry.dart';
 
 /// Background auto-updater for installed extensions across all three ecosystems
-/// (Zangetsu JS, CloudStream `.cs3`, Aniyomi). Reuses each ecosystem's existing
+/// (Glad JS, CloudStream `.cs3`, Aniyomi). Reuses each ecosystem's existing
 /// update path — the same code the Sources screen's "Update" buttons call.
 ///
 /// Every step is best-effort and wrapped so it can NEVER throw or break startup:

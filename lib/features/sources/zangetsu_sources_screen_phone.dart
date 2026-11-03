@@ -1,4 +1,4 @@
-// Zangetsu sources — phone UI.
+// Glad sources — phone UI.
 part of 'zangetsu_sources_screen.dart';
 
 // ---------------------------------------------------------------------------

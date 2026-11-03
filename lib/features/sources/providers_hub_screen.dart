@@ -39,7 +39,7 @@ const Widget _kChevron = Icon(
 const _csBlue = Color(0xFF4D9DFF);
 const _aniGreen = Color(0xFF4DD68C);
 
-/// Providers hub — lists the three provider ecosystems (Zangetsu always,
+/// Providers hub — lists the three provider ecosystems (Glad always,
 /// CloudStream/Aniyomi on Android only), each row pushing its dedicated
 /// ecosystem screen (Tasks 1-3). Stateful only so counts refresh when the
 /// user returns from an ecosystem screen (install/remove there is reflected
@@ -80,7 +80,7 @@ class _HubPhoneView extends StatelessWidget {
         : null;
     // Recompute the counts live when a source is installed / enabled / updated
     // while the hub is open (CS + Aniyomi managers are ChangeNotifiers). The
-    // Zangetsu registry isn't a Listenable, but it can only be mutated from its
+    // Glad registry isn't a Listenable, but it can only be mutated from its
     // own screen, so its count refreshes on navigation back here anyway.
     return ListenableBuilder(
       listenable: Listenable.merge([
@@ -100,7 +100,7 @@ class _HubPhoneView extends StatelessWidget {
     // Mihon (manga extensions) boot-loads the same way Aniyomi does — the
     // load step is Android-only (M7) — so the row is gated identically.
     final showMihon = Platform.isAndroid;
-    // LNReader (novel sources) is a JS provider, same as Zangetsu — no
+    // LNReader (novel sources) is a JS provider, same as Glad — no
     // platform gate needed. Gated on registration instead, so a minimal-GetIt
     // test that never registers LnReaderManager doesn't crash reading it,
     // same purpose the Mihon platform check serves.
@@ -116,8 +116,8 @@ class _HubPhoneView extends StatelessWidget {
         : 0;
     final mangayomiCount = mangayomi?.installed.length ?? 0;
 
-    // Read-only pending-update counts. Zangetsu reuses SourcesState's own
-    // installed-vs-manifest comparison (same result the Zangetsu screen shows);
+    // Read-only pending-update counts. Glad reuses SourcesState's own
+    // installed-vs-manifest comparison (same result the Glad screen shows);
     // CS/Aniyomi/Mihon expose an aggregate updateCount. Nothing is fetched or
     // mutated.
     final zUpdates = SourcesState(
@@ -155,15 +155,15 @@ class _HubPhoneView extends StatelessWidget {
         !activeIsMihon &&
         !activeIsMangayomi;
 
-    // Manga/novel sources are also Zangetsu JS providers under the hood, but
+    // Manga/novel sources are also Glad JS providers under the hood, but
     // get their own hub entry (Task E3) so reading sources read as visibly
     // separate from streaming. sourceTypeOf is the app's one ProviderType
     // resolver (core/ui/source_switcher.dart) — reused rather than
     // re-deriving a manga/novel check here.
     bool isReadingType(ProviderType t) =>
         t == ProviderType.manga || t == ProviderType.novel;
-    // Still needed after the Zangetsu reading row was dropped: a JS reading
-    // source can still be installed and active, and the Zangetsu STREAMING row
+    // Still needed after the Glad reading row was dropped: a JS reading
+    // source can still be installed and active, and the Glad STREAMING row
     // must not light up as ACTIVE when it is.
     final activeIsReading =
         activeIsZangetsu && isReadingType(sourceTypeOf(activeId));
@@ -178,7 +178,7 @@ class _HubPhoneView extends StatelessWidget {
             total: total,
             // +1 for the always-shown Manga & Novel row — not a separate
             // ecosystem count (ecoCount itself is untouched, still just
-            // Zangetsu/CS/Aniyomi/Mihon), just the header copy matching
+            // Glad/CS/Aniyomi/Mihon), just the header copy matching
             // what's on screen.
             ecoCount: ecoCount + (mangayomi == null ? 0 : 1),
             activeName: activeName,
@@ -207,7 +207,7 @@ class _HubPhoneView extends StatelessWidget {
             title: context.l10n.zangetsu,
             desc: 'Built-in JS providers',
             info: '$zangetsuCount sources',
-            // Reading sources are Zangetsu providers too (activeIsZangetsu
+            // Reading sources are Glad providers too (activeIsZangetsu
             // alone doesn't distinguish), so exclude them here — the Manga &
             // Novel row owns the badge when a reading source is active. When
             // the active source is anime/movie, activeIsReading is false and
@@ -243,7 +243,7 @@ class _HubPhoneView extends StatelessWidget {
           ],
           // Reading ecosystems live under their own header so a manga/novel
           // source never reads as a streaming one. Mihon (manga) and LNReader
-          // (novel) sit side by side here — the Zangetsu reading row was
+          // (novel) sit side by side here — the Glad reading row was
           // dropped because those JS sources are search-only (no
           // popular/latest), which left Home with nothing to render.
           //

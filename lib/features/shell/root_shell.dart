@@ -1550,7 +1550,7 @@ class _ProfileSwitcherSheet extends StatelessWidget {
                   ),
                   const SizedBox(width: 6),
                   Text(
-                    'Zangetsu',
+                    'Glad',
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: AppColors.textSecondary,
                       fontWeight: FontWeight.w600,

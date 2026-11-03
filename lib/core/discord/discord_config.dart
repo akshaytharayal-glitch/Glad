@@ -7,7 +7,7 @@
 class DiscordConfig {
   DiscordConfig._();
 
-  /// Zangetsu's Discord Application ID (Developer Portal → General Information).
+  /// Glad's Discord Application ID (Developer Portal → General Information).
   static const String applicationId = '1518610045422665748';
 
   /// Rich-Presence art-asset key for a named portal upload (optional). We
@@ -20,7 +20,7 @@ class DiscordConfig {
   static const String appLogoUrl =
       'https://cdn.jsdelivr.net/gh/Spyou/Zangetsu@main/assets/icon/app_icon.png';
 
-  static const String appName = 'Zangetsu';
+  static const String appName = 'Glad';
 
   /// Discord API base (v10).
   static const String api = 'https://discord.com/api/v10';

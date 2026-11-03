@@ -16,7 +16,7 @@ void main() {
     expect(
       externalSubtitleDestination(
         videoPath:
-            '/storage/ABCD-1234/Android/data/app/files/Downloads/Zangetsu/Show/E1.mp4',
+            '/storage/ABCD-1234/Android/data/app/files/Downloads/Glad/Show/E1.mp4',
         privateStorageRoot: '/data/user/0/app/files',
         locationUri: '/storage/ABCD-1234/Android/data/app/files/Downloads',
       ),
@@ -36,7 +36,7 @@ void main() {
   test('keeps private sidecars private and default sidecars in Downloads', () {
     expect(
       externalSubtitleDestination(
-        videoPath: '/data/user/0/app/files/Zangetsu/Show/E1.mp4',
+        videoPath: '/data/user/0/app/files/Glad/Show/E1.mp4',
         privateStorageRoot: '/data/user/0/app/files',
         locationUri: null,
       ),
@@ -44,7 +44,7 @@ void main() {
     );
     expect(
       externalSubtitleDestination(
-        videoPath: '/storage/emulated/0/Download/Zangetsu/Show/E1.mp4',
+        videoPath: '/storage/emulated/0/Download/Glad/Show/E1.mp4',
         privateStorageRoot: '/data/user/0/app/files',
         locationUri: null,
       ),
@@ -55,14 +55,14 @@ void main() {
   test('videos inside app storage never export public subtitle sidecars', () {
     expect(
       shouldExportSubtitleSidecars(
-        videoPath: '/data/user/0/app/files/Zangetsu/Show/episode.mp4',
+        videoPath: '/data/user/0/app/files/Glad/Show/episode.mp4',
         privateStorageRoot: '/data/user/0/app/files',
       ),
       isFalse,
     );
     expect(
       shouldExportSubtitleSidecars(
-        videoPath: '/storage/emulated/0/Download/Zangetsu/Show/episode.mp4',
+        videoPath: '/storage/emulated/0/Download/Glad/Show/episode.mp4',
         privateStorageRoot: '/data/user/0/app/files',
       ),
       isTrue,
@@ -79,7 +79,7 @@ void main() {
   test('names the public sidecar after the video and its language', () {
     expect(
       externalSubtitleFileName(
-        videoPath: '/storage/Download/Zangetsu/Show/episode_1080p.mp4',
+        videoPath: '/storage/Download/Glad/Show/episode_1080p.mp4',
         language: 'en',
         extension: '.srt',
       ),
@@ -90,7 +90,7 @@ void main() {
   test('sanitizes subtitle language labels for public filenames', () {
     expect(
       externalSubtitleFileName(
-        videoPath: '/storage/Download/Zangetsu/Show/episode.mp4',
+        videoPath: '/storage/Download/Glad/Show/episode.mp4',
         language: 'pt-BR/commentary',
         extension: '.vtt',
       ),

@@ -356,12 +356,12 @@
 			}
 		}
 	},
-	"bootErrorTitle": "Zangetsu ist nicht fertig gestartet",
+	"bootErrorTitle": "Glad ist nicht fertig gestartet",
 	"bootErrorBody": "Etwas auf diesem Gerät verhindert den Start. Nichts ist weg — dein Konto und alles in der Cloud sind sicher.",
 	"resetAppData": "App-Daten zurücksetzen",
 	"resetAppDataTitle": "App-Daten zurücksetzen?",
-	"resetAppDataBody": "Das löscht, was Zangetsu auf diesem Gerät gespeichert hat, damit es neu starten kann.\n\nDein Konto und alles in der Cloud bleiben unberührt — meld dich wieder an und deine Bibliothek ist da.",
-	"resetAppDataDone": "Schließe Zangetsu komplett und öffne es erneut.",
+	"resetAppDataBody": "Das löscht, was Glad auf diesem Gerät gespeichert hat, damit es neu starten kann.\n\nDein Konto und alles in der Cloud bleiben unberührt — meld dich wieder an und deine Bibliothek ist da.",
+	"resetAppDataDone": "Schließe Glad komplett und öffne es erneut.",
 	"detailsCopied": "Details kopiert — schick sie uns",
 	"copyDetails": "Details kopieren",
 	"goodToHaveYouHere": "Schön, dass du da bist.",
@@ -508,7 +508,7 @@
 	"cardsFadeInAsYouScroll": "Karten blenden beim Scrollen ein",
 	"animationStyle": "Animationsstil",
 	"turnOffMaterialYouToPickAColourYourself": "Material You aus, um selbst eine Farbe zu wählen",
-	"downloadsZangetsu": "Downloads › Zangetsu",
+	"downloadsZangetsu": "Downloads › Glad",
 	"removableDrive": "Wechseldatenträger",
 	"chooseFolder": "Ordner wählen…",
 	"resetToDefault": "Auf Standard",
@@ -717,7 +717,7 @@
 	"saveYourListAndContinueWatchingAnywhere": "Liste speichern und überall weiterschauen.",
 	"notSignedIn": "Nicht angemeldet",
 	"haveTheApp": "Hast du die App?",
-	"openZangetsuOnYourNphoneAndScan": "Öffne Zangetsu auf deinem\\nHandy und scanne",
+	"openZangetsuOnYourNphoneAndScan": "Öffne Glad auf deinem\\nHandy und scanne",
 	"noApp": "Keine App?",
 	"resetPassword": "Passwort zurücksetzen",
 	"youExampleCom": "Sie@Beispiel.com",
@@ -744,7 +744,7 @@
 	"sendToTV": "An TV senden",
 	"signInToYourAccountFirstNthenPairYourTV": "Zuerst am Konto anmelden,\\ndann die TV koppeln.",
 	"enterTheCodeFromYourTV": "Code von deiner TV eingeben",
-	"openZangetsuOnYourTVAndSignInWithYourPhoneToSeeIt": "Öffne Zangetsu auf der TV und melde dich mit dem Handy an, um es zu sehen.",
+	"openZangetsuOnYourTVAndSignInWithYourPhoneToSeeIt": "Öffne Glad auf der TV und melde dich mit dem Handy an, um es zu sehen.",
 	"abcd2345": "ABCD 2345",
 	"thisTVWillSignIntoYourAccountYouCanSignItOutLater": "Diese TV meldet sich an deinem Konto an. Du kannst sie später abmelden.",
 	"alsoSendYourTrackersAniListMyAnimeListSimkl": "Tracker auch senden (AniList, MyAnimeList, Simkl)",
@@ -757,7 +757,7 @@
 	"pickABackup": "Backup wählen",
 	"couldnTReadThatBackupFile": "Diese Backup-Datei konnte nicht gelesen werden.",
 	"restoreComplete": "Wiederherstellung fertig",
-	"reopenZangetsuToSeeRestoredLibrarySources": "Zangetsu erneut öffnen, um Bibliothek & Quellen zu sehen.",
+	"reopenZangetsuToSeeRestoredLibrarySources": "Glad erneut öffnen, um Bibliothek & Quellen zu sehen.",
 	"saveToAFile": "In Datei speichern",
 	"saveABackupFileToYourDownloadsFolder": "Backup-Datei im Downloads-Ordner speichern",
 	"backUpToCloud": "In die Cloud sichern",
@@ -1670,7 +1670,7 @@
 	"github": "GitHub",
 	"telegram": "Telegramm",
 	"accentColourBlurb": "Die Hervorhebungsfarbe, die für Schaltflächen, Chips, Fortschrittsanzeigen und ausgewählte Elemente verwendet wird.",
-	"appIconBlurb": "Das Symbol auf Ihrem Startbildschirm. Zangetsu wird geschlossen, wenn Sie es ändern – Android muss den Launcher-Eintrag austauschen.",
+	"appIconBlurb": "Das Symbol auf Ihrem Startbildschirm. Glad wird geschlossen, wenn Sie es ändern – Android muss den Launcher-Eintrag austauschen.",
 	"useTheIcon": "Das Symbol {label} verwenden?",
 	"@useTheIcon": {
 		"placeholders": {
@@ -1679,7 +1679,7 @@
 			}
 		}
 	},
-	"useTheIconBody": "Zangetsu wird geschlossen, damit Android das neue Symbol anwenden kann. Öffnen Sie es anschließend wieder von Ihrem Startbildschirm aus.\n\nFalls sich Zangetsu in einem Ordner oder im Dock befindet, müssen Sie es möglicherweise erneut hinzufügen.",
+	"useTheIconBody": "Glad wird geschlossen, damit Android das neue Symbol anwenden kann. Öffnen Sie es anschließend wieder von Ihrem Startbildschirm aus.\n\nFalls sich Glad in einem Ordner oder im Dock befindet, müssen Sie es möglicherweise erneut hinzufügen.",
 	"animRise": "Erheben",
 	"animRiseDesc": "Liftings und Fades in",
 	"animFade": "Verblassen",
@@ -1722,7 +1722,7 @@
 		}
 	},
 	"cloudBackupFailed": "Die Cloud-Sicherung ist fehlgeschlagen. Überprüfen Sie Ihre Internetverbindung. Sollte die Sicherung weiterhin fehlschlagen, ist der Cloud-Speicher möglicherweise noch nicht eingerichtet.",
-	"savedToDownloadsZangetsu": "Unter Downloads gespeichert › Zangetsu",
+	"savedToDownloadsZangetsu": "Unter Downloads gespeichert › Glad",
 	"restoreFailed": "Wiederherstellung fehlgeschlagen: {error}",
 	"@restoreFailed": {
 		"placeholders": {
@@ -1777,7 +1777,7 @@
 	"betaUpdateAvailable": "Beta-Update verfügbar",
 	"updateAvailable": "Update verfügbar",
 	"startingInstaller": "Installationsprogramm wird gestartet…",
-	"couldnTOpenInstaller": "Das Installationsprogramm konnte nicht geöffnet werden. Aktivieren Sie in den Systemeinstellungen die Option „Unbekannte Apps installieren“ für Zangetsu und versuchen Sie es dann erneut.",
+	"couldnTOpenInstaller": "Das Installationsprogramm konnte nicht geöffnet werden. Aktivieren Sie in den Systemeinstellungen die Option „Unbekannte Apps installieren“ für Glad und versuchen Sie es dann erneut.",
 	"downloadFailedCheckConnection": "Download fehlgeschlagen – überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
 	"libraryIsntSavedReconnect": "Ihre Bibliothek ist noch nicht in der Cloud gespeichert. Durch das Abmelden wird sie von diesem Gerät entfernt. Stellen Sie zuerst eine neue Verbindung her, um sie zu sichern.",
 	"sessionExpiredEnterPassword": "Ihre Sitzung ist abgelaufen. Geben Sie Ihr Passwort ein, um die Verbindung {account} wiederherzustellen und Ihre Bibliothek zu synchronisieren.",
@@ -1906,7 +1906,7 @@
 	"aniyomi": "Aniyomi",
 	"mihon": "Mihon",
 	"lnreader": "LNReader",
-	"zangetsu": "Zangetsu",
+	"zangetsu": "Glad",
 	"cloudStream": "Cloudstream",
 	"installedCount": "{count} installiert",
 	"@installedCount": {

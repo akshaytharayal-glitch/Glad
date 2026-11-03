@@ -23,7 +23,7 @@ class DownloadService {
   static FlutterBackgroundService get instance => _service;
 
   static const String channelId = 'zangetsu_downloads';
-  static const String sharedDir = 'Zangetsu';
+  static const String sharedDir = 'Glad';
   static const String resultsDirName = '.results';
 
   /// Configure the service once at app start (does not start it).
@@ -42,7 +42,7 @@ class DownloadService {
           autoStartOnBoot: false,
           // Leave notificationChannelId null so the plugin creates + uses its own
           // default channel (it only auto-creates one when this is null).
-          initialNotificationTitle: 'Zangetsu',
+          initialNotificationTitle: 'Glad',
           initialNotificationContent: 'Preparing downloads…',
           foregroundServiceTypes: [AndroidForegroundType.dataSync],
         ),

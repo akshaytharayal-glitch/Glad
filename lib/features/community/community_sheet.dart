@@ -100,7 +100,7 @@ class _CommunitySheet extends StatelessWidget {
                 const SizedBox(width: 14),
                 Expanded(
                   child: Text(
-                    'Join the Zangetsu community',
+                    'Join the Glad community',
                     style: AppText.headline.copyWith(
                       color: AppColors.textPrimary,
                       fontWeight: FontWeight.w700,

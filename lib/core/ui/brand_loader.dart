@@ -27,6 +27,16 @@ class _BrandLoaderState extends State<BrandLoader>
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // The Glad loading animation (assets/brand/glad_loader.gif). Silently
+          // absent if the asset ever fails to decode; the bar below still runs.
+          Image.asset(
+            'assets/brand/glad_loader.gif',
+            width: 88,
+            height: 88,
+            gaplessPlayback: true,
+            errorBuilder: (_, _, _) => const SizedBox.shrink(),
+          ),
+          const SizedBox(height: 10),
           SizedBox(
             width: 120,
             height: 3,
@@ -49,9 +59,9 @@ class _BrandLoaderState extends State<BrandLoader>
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0x00FF4D57),
+                                AppColors.accent.withValues(alpha: 0),
                                 AppColors.accent,
-                                Color(0x00FF4D57),
+                                AppColors.accent.withValues(alpha: 0),
                               ],
                             ),
                           ),

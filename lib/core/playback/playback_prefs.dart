@@ -396,7 +396,7 @@ class PlaybackPrefs {
   Future<void> setCloseConfirmation(String value) =>
       _box.put('closeConfirmation', value);
 
-  /// Whether installed extensions (Zangetsu / CloudStream / Aniyomi) auto-update
+  /// Whether installed extensions (Glad / CloudStream / Aniyomi) auto-update
   /// in the background on launch, throttled to ~once a day. Off by default —
   /// updates otherwise happen only when the user taps Update in Sources. A
   /// failed update always leaves the working version in place.

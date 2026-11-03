@@ -401,7 +401,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get presenceButtonLabel => 'Button label';
 
   @override
-  String get presenceButtonLabelHint => 'Open in Zangetsu';
+  String get presenceButtonLabelHint => 'Open in Glad';
 
   @override
   String get presenceShowWhenPaused => 'Show when paused';
@@ -1029,7 +1029,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get bootErrorTitle => 'Zangetsu ist nicht fertig gestartet';
+  String get bootErrorTitle => 'Glad ist nicht fertig gestartet';
 
   @override
   String get bootErrorBody =>
@@ -1043,11 +1043,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get resetAppDataBody =>
-      'Das löscht, was Zangetsu auf diesem Gerät gespeichert hat, damit es neu starten kann.\n\nDein Konto und alles in der Cloud bleiben unberührt — meld dich wieder an und deine Bibliothek ist da.';
+      'Das löscht, was Glad auf diesem Gerät gespeichert hat, damit es neu starten kann.\n\nDein Konto und alles in der Cloud bleiben unberührt — meld dich wieder an und deine Bibliothek ist da.';
 
   @override
   String get resetAppDataDone =>
-      'Schließe Zangetsu komplett und öffne es erneut.';
+      'Schließe Glad komplett und öffne es erneut.';
 
   @override
   String get detailsCopied => 'Details kopiert — schick sie uns';
@@ -1535,7 +1535,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Material You aus, um selbst eine Farbe zu wählen';
 
   @override
-  String get downloadsZangetsu => 'Downloads › Zangetsu';
+  String get downloadsZangetsu => 'Downloads › Glad';
 
   @override
   String get removableDrive => 'Wechseldatenträger';
@@ -2238,7 +2238,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourNphoneAndScan =>
-      'Öffne Zangetsu auf deinem\\nHandy und scanne';
+      'Öffne Glad auf deinem\\nHandy und scanne';
 
   @override
   String get noApp => 'Keine App?';
@@ -2323,7 +2323,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourTVAndSignInWithYourPhoneToSeeIt =>
-      'Öffne Zangetsu auf der TV und melde dich mit dem Handy an, um es zu sehen.';
+      'Öffne Glad auf der TV und melde dich mit dem Handy an, um es zu sehen.';
 
   @override
   String get abcd2345 => 'ABCD 2345';
@@ -2369,7 +2369,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get reopenZangetsuToSeeRestoredLibrarySources =>
-      'Zangetsu erneut öffnen, um Bibliothek & Quellen zu sehen.';
+      'Glad erneut öffnen, um Bibliothek & Quellen zu sehen.';
 
   @override
   String get saveToAFile => 'In Datei speichern';
@@ -3896,7 +3896,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get appIconBlurb =>
-      'Das Symbol auf Ihrem Startbildschirm. Zangetsu wird geschlossen, wenn Sie es ändern – Android muss den Launcher-Eintrag austauschen.';
+      'Das Symbol auf Ihrem Startbildschirm. Glad wird geschlossen, wenn Sie es ändern – Android muss den Launcher-Eintrag austauschen.';
 
   @override
   String useTheIcon(String label) {
@@ -3905,7 +3905,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get useTheIconBody =>
-      'Zangetsu wird geschlossen, damit Android das neue Symbol anwenden kann. Öffnen Sie es anschließend wieder von Ihrem Startbildschirm aus.\n\nFalls sich Zangetsu in einem Ordner oder im Dock befindet, müssen Sie es möglicherweise erneut hinzufügen.';
+      'Glad wird geschlossen, damit Android das neue Symbol anwenden kann. Öffnen Sie es anschließend wieder von Ihrem Startbildschirm aus.\n\nFalls sich Glad in einem Ordner oder im Dock befindet, müssen Sie es möglicherweise erneut hinzufügen.';
 
   @override
   String get animRise => 'Erheben';
@@ -3987,7 +3987,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get savedToDownloadsZangetsu =>
-      'Unter Downloads gespeichert › Zangetsu';
+      'Unter Downloads gespeichert › Glad';
 
   @override
   String restoreFailed(String error) {
@@ -4063,7 +4063,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get couldnTOpenInstaller =>
-      'Das Installationsprogramm konnte nicht geöffnet werden. Aktivieren Sie in den Systemeinstellungen die Option „Unbekannte Apps installieren“ für Zangetsu und versuchen Sie es dann erneut.';
+      'Das Installationsprogramm konnte nicht geöffnet werden. Aktivieren Sie in den Systemeinstellungen die Option „Unbekannte Apps installieren“ für Glad und versuchen Sie es dann erneut.';
 
   @override
   String get downloadFailedCheckConnection =>
@@ -4228,7 +4228,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get lnreader => 'LNReader';
 
   @override
-  String get zangetsu => 'Zangetsu';
+  String get zangetsu => 'Glad';
 
   @override
   String get cloudStream => 'Cloudstream';
@@ -5513,7 +5513,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get keepDownloadsPrivateSubtitle =>
-      'New video downloads stay inside Zangetsu instead of the Downloads folder. They are deleted when you uninstall Zangetsu. Chapters and exports are unaffected.';
+      'New video downloads stay inside Glad instead of the Downloads folder. They are deleted when you uninstall Glad. Chapters and exports are unaffected.';
 
   @override
   String get mangaPageTranslationTitle => 'Translate page';
@@ -5654,7 +5654,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get mangaTranslationRestartRequiredMessage =>
-      'Close and reopen Zangetsu to finish setting up on-device OCR, then try again.';
+      'Close and reopen Glad to finish setting up on-device OCR, then try again.';
 
   @override
   String get mangaTranslationSearchLanguages => 'Search languages';

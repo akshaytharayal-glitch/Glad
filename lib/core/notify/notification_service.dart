@@ -180,7 +180,7 @@ class NotificationService {
       android: AndroidNotificationDetails(
         'announcements',
         'Announcements',
-        channelDescription: 'News and updates from Zangetsu',
+        channelDescription: 'News and updates from Glad',
         importance: Importance.high,
         priority: Priority.high,
         styleInformation: style,

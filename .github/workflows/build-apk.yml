@@ -1,0 +1,125 @@
+name: Build Glad APK
+
+# Builds the Android APKs and publishes them as a GitHub Release.
+#   - every push to main
+#   - or by hand: Actions -> Build Glad APK -> Run workflow
+#
+# Signing: if the repository has the secrets below, the release is signed with
+# YOUR key. Without them it is signed with the fallback key in
+# android/glad-ci.keystore, so updates still install over each other.
+#   ANDROID_KEYSTORE_BASE64   base64 of your .jks/.keystore
+#   ANDROID_KEYSTORE_PASSWORD
+#   ANDROID_KEY_ALIAS
+#   ANDROID_KEY_PASSWORD
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - ".github/screenshots/**"
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish a GitHub Release"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      VERSION_NAME: 1.0.${{ github.run_number }}
+      BUILD_NUMBER: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Apply Glad logo to icons and in-app art
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 tool/apply_glad_logo.py
+
+      - name: Configure signing
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -n "$KS_B64" ] && [ -n "$KS_PASS" ] && [ -n "$KEY_ALIAS" ] && [ -n "$KEY_PASS" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.keystore"
+            STORE_FILE="$RUNNER_TEMP/release.keystore"
+            echo "Signing with the repository's release key"
+          else
+            STORE_FILE="$GITHUB_WORKSPACE/android/glad-ci.keystore"
+            KS_PASS=android; KEY_ALIAS=glad; KEY_PASS=android
+            echo "Signing with the fallback key (add ANDROID_KEYSTORE_* secrets to use your own)"
+          fi
+          {
+            echo "storeFile=$STORE_FILE"
+            echo "storePassword=$KS_PASS"
+            echo "keyAlias=$KEY_ALIAS"
+            echo "keyPassword=$KEY_PASS"
+          } > android/key.properties
+
+      - run: flutter pub get
+
+      - name: Analyze (informational)
+        continue-on-error: true
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Build per-ABI APKs
+        run: >
+          flutter build apk --release --split-per-abi
+          --target-platform android-arm,android-arm64
+          --build-name "$VERSION_NAME" --build-number "$BUILD_NUMBER"
+
+      - name: Build universal APK
+        run: >
+          flutter build apk --release
+          --target-platform android-arm,android-arm64
+          --build-name "$VERSION_NAME" --build-number "$BUILD_NUMBER"
+
+      - name: Collect APKs
+        run: |
+          mkdir -p dist
+          out=build/app/outputs/flutter-apk
+          cp "$out/app-arm64-v8a-release.apk"   "dist/Glad-v$VERSION_NAME-arm64-v8a.apk"
+          cp "$out/app-armeabi-v7a-release.apk" "dist/Glad-v$VERSION_NAME-armeabi-v7a.apk"
+          cp "$out/app-release.apk"             "dist/Glad-v$VERSION_NAME-universal.apk"
+          ls -lh dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Glad-v${{ env.VERSION_NAME }}
+          path: dist/*.apk
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        if: github.event_name == 'push' || inputs.publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$VERSION_NAME" dist/*.apk \
+            --target "$GITHUB_SHA" \
+            --title "Glad v$VERSION_NAME" \
+            --notes "Glad v$VERSION_NAME. arm64-v8a suits most phones; armeabi-v7a is for older 32-bit devices; universal works everywhere but is larger." \
+            --latest

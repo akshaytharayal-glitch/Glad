@@ -6,12 +6,12 @@ void main() {
     final restored = OfflineSubtitle.fromMap({
       'lang': 'en',
       'path': '/private/subs/episode.en.vtt',
-      'publicPath': '/storage/Download/Zangetsu/Show/episode.en.srt',
+      'publicPath': '/storage/Download/Glad/Show/episode.en.srt',
     });
 
     expect(
       restored.toMap()['publicPath'],
-      '/storage/Download/Zangetsu/Show/episode.en.srt',
+      '/storage/Download/Glad/Show/episode.en.srt',
     );
   });
 

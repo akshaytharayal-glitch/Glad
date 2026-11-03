@@ -329,7 +329,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get couldNotExportLogs => 'ログを書き出せませんでした';
 
   @override
-  String get logsShareSubject => 'Zangetsu のログ';
+  String get logsShareSubject => 'Glad のログ';
 
   @override
   String get signInSubtitle => 'リスト・履歴・続きから再生を同期';
@@ -398,7 +398,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get presenceButtonLabel => 'Button label';
 
   @override
-  String get presenceButtonLabelHint => 'Open in Zangetsu';
+  String get presenceButtonLabelHint => 'Open in Glad';
 
   @override
   String get presenceShowWhenPaused => 'Show when paused';
@@ -1010,7 +1010,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get bootErrorTitle => 'Zangetsu の起動が完了しませんでした';
+  String get bootErrorTitle => 'Glad の起動が完了しませんでした';
 
   @override
   String get bootErrorBody =>
@@ -1024,10 +1024,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get resetAppDataBody =>
-      'Zangetsu がこの端末に保存したデータを消して、まっさらな状態で起動できるようにします。\n\nアカウントとクラウド同期分はそのままです。再サインインすればライブラリが戻ります。';
+      'Glad がこの端末に保存したデータを消して、まっさらな状態で起動できるようにします。\n\nアカウントとクラウド同期分はそのままです。再サインインすればライブラリが戻ります。';
 
   @override
-  String get resetAppDataDone => 'Zangetsu を完全に終了して、もう一度開いてください。';
+  String get resetAppDataDone => 'Glad を完全に終了して、もう一度開いてください。';
 
   @override
   String get detailsCopied => '詳細をコピーしました — こちらへ送ってください';
@@ -2177,7 +2177,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourNphoneAndScan =>
-      'スマホで Zangetsu を開き、\\nスキャンしてください';
+      'スマホで Glad を開き、\\nスキャンしてください';
 
   @override
   String get noApp => 'アプリがありませんか？';
@@ -2236,7 +2236,7 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String
   get onTheZangetsuAppOnYourPhoneOpenNPairATVAndEnterThisCodeOrScanTheQR =>
-      'スマホの Zangetsu で「テレビをペアリング」を開き、\\nこのコードを入力するか、QR をスキャンしてください。';
+      'スマホの Glad で「テレビをペアリング」を開き、\\nこのコードを入力するか、QR をスキャンしてください。';
 
   @override
   String get signingIn => 'サインイン中…';
@@ -2262,7 +2262,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourTVAndSignInWithYourPhoneToSeeIt =>
-      'テレビで Zangetsu を開き、スマホでサインインすると表示されます。';
+      'テレビで Glad を開き、スマホでサインインすると表示されます。';
 
   @override
   String get abcd2345 => 'ABCD 2345';
@@ -2305,7 +2305,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get reopenZangetsuToSeeRestoredLibrarySources =>
-      'Zangetsu を開き直すと、復元したライブラリとソースが表示されます。';
+      'Glad を開き直すと、復元したライブラリとソースが表示されます。';
 
   @override
   String get saveToAFile => 'ファイルに保存';
@@ -2518,7 +2518,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noSourcesInThisRepo => 'このリポジトリにソースはありません。';
 
   @override
-  String get zangetsuProviders => 'Zangetsu プロバイダー';
+  String get zangetsuProviders => 'Glad プロバイダー';
 
   @override
   String get addRepo => 'リポジトリを追加';
@@ -2621,7 +2621,7 @@ class AppLocalizationsJa extends AppLocalizations {
       'このソース独自の設定を開く（サーバー、言語など）';
 
   @override
-  String get addZangetsuRepo => 'Zangetsu リポジトリを追加';
+  String get addZangetsuRepo => 'Glad リポジトリを追加';
 
   @override
   String get theProviderWillBeRemovedFromYourInstalledSources =>
@@ -5369,7 +5369,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get keepDownloadsPrivateSubtitle =>
-      'New video downloads stay inside Zangetsu instead of the Downloads folder. They are deleted when you uninstall Zangetsu. Chapters and exports are unaffected.';
+      'New video downloads stay inside Glad instead of the Downloads folder. They are deleted when you uninstall Glad. Chapters and exports are unaffected.';
 
   @override
   String get mangaPageTranslationTitle => 'Translate page';
@@ -5510,7 +5510,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get mangaTranslationRestartRequiredMessage =>
-      'Close and reopen Zangetsu to finish setting up on-device OCR, then try again.';
+      'Close and reopen Glad to finish setting up on-device OCR, then try again.';
 
   @override
   String get mangaTranslationSearchLanguages => 'Search languages';

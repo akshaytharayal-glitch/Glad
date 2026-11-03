@@ -333,7 +333,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get couldNotExportLogs => 'Tidak dapat mengekspor log';
 
   @override
-  String get logsShareSubject => 'Log Zangetsu';
+  String get logsShareSubject => 'Log Glad';
 
   @override
   String get signInSubtitle =>
@@ -403,7 +403,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get presenceButtonLabel => 'Button label';
 
   @override
-  String get presenceButtonLabelHint => 'Open in Zangetsu';
+  String get presenceButtonLabelHint => 'Open in Glad';
 
   @override
   String get presenceShowWhenPaused => 'Show when paused';
@@ -1031,7 +1031,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get bootErrorTitle => 'Zangetsu tidak selesai memulai';
+  String get bootErrorTitle => 'Glad tidak selesai memulai';
 
   @override
   String get bootErrorBody =>
@@ -1045,10 +1045,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get resetAppDataBody =>
-      'Ini menghapus yang tersimpan Zangetsu di perangkat ini agar bisa mulai dari awal.\n\nAkunmu dan yang tersinkron ke cloud tidak disentuh — masuk lagi dan pustakamu kembali.';
+      'Ini menghapus yang tersimpan Glad di perangkat ini agar bisa mulai dari awal.\n\nAkunmu dan yang tersinkron ke cloud tidak disentuh — masuk lagi dan pustakamu kembali.';
 
   @override
-  String get resetAppDataDone => 'Tutup Zangetsu sepenuhnya lalu buka lagi.';
+  String get resetAppDataDone => 'Tutup Glad sepenuhnya lalu buka lagi.';
 
   @override
   String get detailsCopied => 'Detail disalin — kirimkan ke kami';
@@ -1535,7 +1535,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Matikan Material You untuk memilih warna sendiri';
 
   @override
-  String get downloadsZangetsu => 'Unduhan › Zangetsu';
+  String get downloadsZangetsu => 'Unduhan › Glad';
 
   @override
   String get removableDrive => 'Drive yang bisa dilepas';
@@ -2238,7 +2238,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourNphoneAndScan =>
-      'Buka Zangetsu di\\nponselmu dan pindai';
+      'Buka Glad di\\nponselmu dan pindai';
 
   @override
   String get noApp => 'Belum punya aplikasi?';
@@ -2297,7 +2297,7 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String
   get onTheZangetsuAppOnYourPhoneOpenNPairATVAndEnterThisCodeOrScanTheQR =>
-      'Di aplikasi Zangetsu di ponselmu, buka\\n\"Pasangkan TV\" lalu masukkan kode ini — atau pindai QR-nya.';
+      'Di aplikasi Glad di ponselmu, buka\\n\"Pasangkan TV\" lalu masukkan kode ini — atau pindai QR-nya.';
 
   @override
   String get signingIn => 'Sedang masuk…';
@@ -2323,7 +2323,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get openZangetsuOnYourTVAndSignInWithYourPhoneToSeeIt =>
-      'Buka Zangetsu di TV-mu dan masuk dengan ponselmu untuk melihatnya.';
+      'Buka Glad di TV-mu dan masuk dengan ponselmu untuk melihatnya.';
 
   @override
   String get abcd2345 => 'ABCD 2345';
@@ -2368,7 +2368,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get reopenZangetsuToSeeRestoredLibrarySources =>
-      'Buka lagi Zangetsu untuk melihat pustaka & sumber yang dipulihkan.';
+      'Buka lagi Glad untuk melihat pustaka & sumber yang dipulihkan.';
 
   @override
   String get saveToAFile => 'Simpan ke file';
@@ -2590,7 +2590,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get noSourcesInThisRepo => 'Tidak ada sumber di repo ini.';
 
   @override
-  String get zangetsuProviders => 'Penyedia Zangetsu';
+  String get zangetsuProviders => 'Penyedia Glad';
 
   @override
   String get addRepo => 'Tambah repo';
@@ -2698,7 +2698,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Buka pengaturan milik sumber ini (mis. server, bahasa)';
 
   @override
-  String get addZangetsuRepo => 'Tambah repo Zangetsu';
+  String get addZangetsuRepo => 'Tambah repo Glad';
 
   @override
   String get theProviderWillBeRemovedFromYourInstalledSources =>
@@ -3883,7 +3883,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get appIconBlurb =>
-      'Ikon di layar berandamu. Zangetsu menutup diri saat kamu mengubahnya — Android harus mengganti entri launcher.';
+      'Ikon di layar berandamu. Glad menutup diri saat kamu mengubahnya — Android harus mengganti entri launcher.';
 
   @override
   String useTheIcon(String label) {
@@ -3892,7 +3892,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get useTheIconBody =>
-      'Zangetsu akan menutup diri supaya Android bisa menerapkan ikon baru. Buka lagi dari layar berandamu setelahnya.\n\nKalau Zangetsu ada di folder atau dock, kamu mungkin perlu menambahkannya lagi.';
+      'Glad akan menutup diri supaya Android bisa menerapkan ikon baru. Buka lagi dari layar berandamu setelahnya.\n\nKalau Glad ada di folder atau dock, kamu mungkin perlu menambahkannya lagi.';
 
   @override
   String get animRise => 'Naik';
@@ -3972,7 +3972,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Cadangan cloud gagal. Pastikan kamu online — kalau terus gagal, penyimpanan cadangan cloud mungkin belum disiapkan.';
 
   @override
-  String get savedToDownloadsZangetsu => 'Disimpan ke Unduhan › Zangetsu';
+  String get savedToDownloadsZangetsu => 'Disimpan ke Unduhan › Glad';
 
   @override
   String restoreFailed(String error) {
@@ -4048,7 +4048,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get couldnTOpenInstaller =>
-      'Tidak bisa membuka installer. Aktifkan \"Pasang aplikasi tidak dikenal\" untuk Zangetsu di pengaturan sistem, lalu coba lagi.';
+      'Tidak bisa membuka installer. Aktifkan \"Pasang aplikasi tidak dikenal\" untuk Glad di pengaturan sistem, lalu coba lagi.';
 
   @override
   String get downloadFailedCheckConnection =>
@@ -4211,7 +4211,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get lnreader => 'LNReader';
 
   @override
-  String get zangetsu => 'Zangetsu';
+  String get zangetsu => 'Glad';
 
   @override
   String get cloudStream => 'CloudStream';
@@ -5489,7 +5489,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get keepDownloadsPrivateSubtitle =>
-      'Unduhan video baru tetap di dalam Zangetsu, bukan di folder Unduhan. Unduhan itu dihapus saat kamu mencopot Zangetsu. Bab dan hasil ekspor tidak terpengaruh.';
+      'Unduhan video baru tetap di dalam Glad, bukan di folder Unduhan. Unduhan itu dihapus saat kamu mencopot Glad. Bab dan hasil ekspor tidak terpengaruh.';
 
   @override
   String get mangaPageTranslationTitle => 'Translate page';
@@ -5630,7 +5630,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get mangaTranslationRestartRequiredMessage =>
-      'Close and reopen Zangetsu to finish setting up on-device OCR, then try again.';
+      'Close and reopen Glad to finish setting up on-device OCR, then try again.';
 
   @override
   String get mangaTranslationSearchLanguages => 'Search languages';

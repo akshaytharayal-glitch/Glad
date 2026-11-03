@@ -3,7 +3,7 @@
 /// sessions; the server API key is never embedded here.
 class Environment {
   static const String appwriteProjectId = '6a1ed44f0029b50bccde';
-  static const String appwriteProjectName = 'Zangetsu';
+  static const String appwriteProjectName = 'Glad';
   static const String appwritePublicEndpoint =
       'https://sgp.cloud.appwrite.io/v1';
 
@@ -32,7 +32,7 @@ class Environment {
   /// Supabase AuthCubit, which calls `resetPasswordForEmail`.
   static const String passwordResetUrl = 'https://zangetsu.online/';
 
-  /// Base of the Zangetsu website (landing + reset + the share "open" page).
+  /// Base of the Glad website (landing + reset + the share "open" page).
   static const String siteBaseUrl = 'https://zangetsu.online';
 
   /// Share links point here. The page opens the app if installed (via the

@@ -59,7 +59,7 @@ class DownloadManager extends ChangeNotifier {
   final Map<String, TorrentDownloadProgress> torrentProgress = {};
 
   static const String boxName = 'downloads';
-  static const String _sharedDir = 'Zangetsu';
+  static const String _sharedDir = 'Glad';
 
   /// When a source clearly supplies both cuts, keep only the selected one.
   /// Single-cut and unlabelled lists stay untouched; language tracks on a

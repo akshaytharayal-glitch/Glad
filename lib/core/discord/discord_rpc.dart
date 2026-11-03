@@ -449,7 +449,7 @@ class DiscordRpc {
     Duration position = Duration.zero,
     Duration duration = Duration.zero,
     bool playing = true,
-    // https open link for the "Open in Zangetsu" button (ShareLink.watchUrl).
+    // https open link for the "Open in Glad" button (ShareLink.watchUrl).
     // Null omits the button — same payload as before.
     String? openUrl,
   }) async {
@@ -479,7 +479,7 @@ class DiscordRpc {
             appText: DiscordConfig.appName,
           );
     var buttonLabel = presenceButtonLabel;
-    if (buttonLabel.isEmpty) buttonLabel = 'Open in Zangetsu';
+    if (buttonLabel.isEmpty) buttonLabel = 'Open in Glad';
     _current = DiscordActivity(
       name: discordSourceLine(
         nameSrc,
@@ -532,7 +532,7 @@ class DiscordRpc {
     if (revision != _presenceRevision || !_allowed) return;
     _current = DiscordActivity(
       name: DiscordConfig.appName,
-      type: 0, // Playing → "Playing Zangetsu"
+      type: 0, // Playing → "Playing Glad"
       details: (browsingShowsTitle && title != null)
           ? 'Looking at $title'
           : 'Browsing',

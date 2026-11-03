@@ -28,7 +28,7 @@ import '../../l10n/l10n.dart';
 part 'zangetsu_sources_screen_phone.dart';
 part 'zangetsu_sources_screen_tv.dart';
 
-/// Dedicated Zangetsu (JS provider) ecosystem screen — Installed and
+/// Dedicated Glad (JS provider) ecosystem screen — Installed and
 /// Repositories as two tabs. Self-contained: creates its own [SourcesBloc]
 /// so it works whether pushed standalone or from the Providers hub.
 ///
@@ -51,7 +51,7 @@ class ZangetsuSourcesScreen extends StatelessWidget {
   /// instead of the full unfiltered list, with a "Show all" toggle back to
   /// everything (Task E3 fix round 1 — a tile that opens an identical
   /// unfiltered screen doesn't read as "different from streaming mode").
-  /// Defaults to false so every other call site (the existing Zangetsu row,
+  /// Defaults to false so every other call site (the existing Glad row,
   /// Settings → Providers) is untouched. TV never reads this — [_ZTvView]
   /// doesn't take it, so TV is unaffected regardless of the caller.
   final bool scopeToReading;

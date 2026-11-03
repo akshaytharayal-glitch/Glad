@@ -50,7 +50,7 @@ class AppIconService {
   static const List<AppIconOption> options = [
     AppIconOption(
       id: 'crescent',
-      label: 'Zangetsu',
+      label: 'Glad',
       asset: 'assets/icon/preview_crescent.png',
     ),
     AppIconOption(

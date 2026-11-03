@@ -42,9 +42,9 @@ class ShareLink {
 
   /// Human-facing share text: the title + the link.
   static String shareText(MediaItem item) =>
-      '${item.title}\n\nWatch on Zangetsu:\n${forItem(item)}';
+      '${item.title}\n\nWatch on Glad:\n${forItem(item)}';
 
-  /// "Open in Zangetsu" URL for the Discord Rich Presence button while
+  /// "Open in Glad" URL for the Discord Rich Presence button while
   /// watching: the same https share link, so a friend with the app lands on
   /// this exact title and one without gets the install page. Null when the
   /// title identity is incomplete (no source or url to reopen).
